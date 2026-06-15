@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Sakthi Shanmugam | Chartered Engineer in Chennai</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn more about Sakthi Shanmugam, a certified Chartered Engineer (India) in Chennai with over 10 years of experience in Mechanical Engineering, HVAC Design, and Machinery Valuations.">
+    <meta name="keywords" content="Sakthi Shanmugam, Chartered Engineer Chennai, Valueguru Engineers, Assure Chartered Engineers, Machinery Valuation Profile">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">    
+    <!-- Theme Initializer (Prevents theme flashing on load) -->
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', storedTheme);
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Header Top Info Bar -->
+    <header class="header-top">
+        <div class="container">
+            <div class="top-info">
+                <div class="top-info-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <a href="mailto:sakthiceng@gmail.com">sakthiceng@gmail.com</a>
+                </div>
+                <div class="top-info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Chennai, Tamilnadu</span>
+                </div>
+                <div class="top-info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+919442932849">+91 9442932849</a>
+                </div>
+            </div>
+            <div class="top-social">
+                <a href="#" class="top-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="top-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon-box">S</div>
+                <div class="logo-text-group">
+                    <span class="logo-text">Sakthi Shanmugam</span>
+                    <span class="logo-sub">Chartered Engineer</span>
+                </div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About Me</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-cta"><a href="contact.html" class="btn btn-accent">Contact Us</a></li>
+                <li>
+                    <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Drawer Backdrop for Mobile Drawer Menu -->
+    <div class="drawer-backdrop"></div>
+
+    <!-- Mobile Drawer Menu Navigation -->
+    <div class="mobile-nav-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <div class="logo-icon-box">S</div>
+                <span class="logo-text">Sakthi</span>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link active">About Me</a></li>
+            <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+            <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        </ul>
+        <div class="drawer-cta">
+            <a href="contact.html" class="btn btn-accent" style="width: 100%;">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Inner Page Header Banner -->
+    <div class="breadcumb-area" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://balamurugan.in/new/wp-content/uploads/2026/04/Banner.png'); padding: 80px 0; background-size: cover; background-position: center; text-align: center; color: var(--color-bg-white);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-family: var(--font-heading); margin-bottom: 8px; color: var(--color-accent);">About Me</h2>
+            <div class="breadcumb-inner" style="font-size: 0.95rem; font-weight: 600; color: rgba(255, 255, 255, 0.8);">
+                <a href="index.html" style="color: var(--color-accent-light);">Home</a>
+                <i class="fa-solid fa-angle-right" style="margin: 0 8px; font-size: 0.75rem;"></i>
+                <span>About Me</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Intro Profile Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-intro-grid">
+                <div class="about-intro-image-frame reveal">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2025/12/Sakthi-Shanmugan-Chartered-Engineer-About-Me.png" alt="Sakthi Shanmugam profile picture">
+                </div>
+                <div class="about-intro-content reveal reveal-delay-2">
+                    <span class="section-subtitle">Profile Summary</span>
+                    <h2 class="section-title" style="text-align: left; margin-left: 0; padding-bottom: 12px;">Professional Journey</h2>
+                    <p>I am <strong>Sakthi Shanmugam</strong>, a Chartered Engineer (India) with over 10 years of professional experience in mechanical engineering, engineering design, customs valuations, damage assessment, and technical report drafting.</p>
+                    <p>My academic foundation stems from a Bachelor's degree in Mechanical Engineering, subsequently supplemented by a Master's degree in Engineering Design. I hold memberships across several nationally recognized institutions, ensuring that every engineering review, inspection, and valuation report stands up to rigorous legal and technical guidelines.</p>
+                    
+                    <div style="margin-top: 24px;">
+                        <h4 style="font-size: 1.15rem; color: var(--color-primary); margin-bottom: 8px;">Professional Values</h4>
+                        <p style="font-size: 0.95rem; color: var(--color-text-muted);">I believe engineering is built on responsibility, accuracy, and integrity. Every inspection, valuation, and technical dossier carries significant legal weight, and I approach my assignments with a strong commitment to compliance and technical clarity developed through years of active field practice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Career Timeline -->
+    <section class="section section-bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Chronology</span>
+                <h2 class="section-title">Career Milestones & Roles</h2>
+                <p class="section-desc">Tracing my journey from mechanical design engineering to specialized customs valuation & technical certification.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item timeline-left reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">July 2021 – Dec 2025</span>
+                        <h3 class="timeline-role">Senior Chartered Engineer</h3>
+                        <div class="timeline-company">Assure Chartered Engineers, Chennai</div>
+                        <p class="timeline-desc">Served as branch in-charge. Executed machinery valuation inside customs areas, estimated plant & equipment value for subsidies or taxation, liaised with government/private entities, and inspected CFS auction cargo.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item timeline-right reveal reveal-delay-1">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Sept 2016 – Oct 2018</span>
+                        <h3 class="timeline-role">Chartered Engineer</h3>
+                        <div class="timeline-company">Valueguru Chartered Engineers & Valuers Pvt. Ltd., Chennai</div>
+                        <p class="timeline-desc">Worked closely with Customs departments (SIIB, DRI, DIU, ACIU) inspecting imported second-hand capital goods. Performed damage surveys, scrap audits, and issued e-waste compliance validations.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item timeline-left reveal reveal-delay-2">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Design Phase</span>
+                        <h3 class="timeline-role">Design Engineer</h3>
+                        <div class="timeline-company">Kumar Consultant, Chennai</div>
+                        <p class="timeline-desc">Handled HVAC system calculations, duct routing layout designs, and project coordination for commercial and industrial structures, resolving civil site constraints.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item timeline-right reveal reveal-delay-3">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Early Career</span>
+                        <h3 class="timeline-role">CAD Design Engineer</h3>
+                        <div class="timeline-company">CAD Square, Salem</div>
+                        <p class="timeline-desc">Worked on CNC/VMC mechanical tool design, Chassis structural stress analyses, load distribution calculations, and trained engineering students in CAD modeling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Skills & Competencies -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Competencies</span>
+                <h2 class="section-title">Core Skills & Expertise</h2>
+                <p class="section-desc">Technical competencies honed through years of industrial practice and academic research.</p>
+            </div>
+            
+            <div class="skills-grid reveal reveal-delay-1">
+                <span class="skill-tag">Chartered Engineer Valuation</span>
+                <span class="skill-tag">Import & Export Machinery Appraisal</span>
+                <span class="skill-tag">Plant & Machinery Valuations</span>
+                <span class="skill-tag">Customs Inspections & Liaison</span>
+                <span class="skill-tag">Pre-Shipment Inspections</span>
+                <span class="skill-tag">Technical Report Preparation</span>
+                <span class="skill-tag">HVAC & Mechanical Duct Design</span>
+                <span class="skill-tag">CNC / VMC Machine Tool Design</span>
+                <span class="skill-tag">CAD Modeling & Structural FEA</span>
+                <span class="skill-tag">E-Waste Scrap Certification</span>
+                <span class="skill-tag">Client Coordination</span>
+                <span class="skill-tag">EPCG Compliance Verification</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memberships Section -->
+    <section class="section section-bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Affiliations</span>
+                <h2 class="section-title">Professional Memberships</h2>
+                <p class="section-desc">Actively empanelled and aligned with top professional institutions across India.</p>
+            </div>
+
+            <!-- Features Grid reused for memberships -->
+            <div class="features-grid" style="margin-top: 0;">
+                <div class="feature-card reveal" style="padding: 30px;">
+                    <div class="feature-icon-box" style="width: 50px; height: 50px; font-size: 1.25rem;"><i class="fa-solid fa-id-card"></i></div>
+                    <h3 class="feature-title" style="font-size: 1.15rem;">Institution of Engineers India</h3>
+                    <p class="feature-desc">Registered Chartered Engineer (India) and Life Member of IEI, the national body of engineers.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1" style="padding: 30px;">
+                    <div class="feature-icon-box" style="width: 50px; height: 50px; font-size: 1.25rem;"><i class="fa-solid fa-stamp"></i></div>
+                    <h3 class="feature-title" style="font-size: 1.15rem;">Institution of Valuers</h3>
+                    <p class="feature-desc">Approved Valuer and primary member of IOV Registered Valuers Foundation (IOV-RVF).</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2" style="padding: 30px;">
+                    <div class="feature-icon-box" style="width: 50px; height: 50px; font-size: 1.25rem;"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3 class="feature-title" style="font-size: 1.15rem;">ECI & IARP Associations</h3>
+                    <p class="feature-desc">Professional Engineer under Engineering Council of India & life member of IARP for safety safeguards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Sakthi <span>Shanmugam</span></h3>
+                    <p>Professional Chartered Engineer with a specialized mechanical background. Empanelled to supply legal valuations, inspections, and EPCG certificates to import/export units.</p>
+                    <div class="top-social">
+                        <a href="#" class="top-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="top-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.15rem; color: var(--color-bg-white); margin-bottom: 24px;">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li class="footer-link-item"><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Me</a></li>
+                        <li class="footer-link-item"><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+                        <li class="footer-link-item"><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+                        <li class="footer-link-item"><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.15rem; color: var(--color-bg-white); margin-bottom: 24px;">Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="footer-contact-details">
+                            <h5>Office Address</h5>
+                            <p>Chennai, Tamilnadu, India</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="footer-contact-details">
+                            <h5>Call Support</h5>
+                            <p>+91 9442932849</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="footer-contact-details">
+                            <h5>Email Address</h5>
+                            <p>sakthiceng@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sakthi Shanmugam – Chartered Engineer. All Rights Reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>

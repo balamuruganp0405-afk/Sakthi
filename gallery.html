@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Sakthi Shanmugam | Chartered Engineer in Chennai</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="View the work gallery of Sakthi Shanmugam, Chartered Engineer. Gallery showcases inspections of second-hand machines, plant valuations, and compliance certificates.">
+    <meta name="keywords" content="Chartered Engineer Gallery, Machinery Valuation Gallery, Customs Inspection Photos, Engineering Site Photos">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">    
+    <!-- Theme Initializer (Prevents theme flashing on load) -->
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', storedTheme);
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Header Top Info Bar -->
+    <header class="header-top">
+        <div class="container">
+            <div class="top-info">
+                <div class="top-info-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <a href="mailto:sakthiceng@gmail.com">sakthiceng@gmail.com</a>
+                </div>
+                <div class="top-info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Chennai, Tamilnadu</span>
+                </div>
+                <div class="top-info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+919442932849">+91 9442932849</a>
+                </div>
+            </div>
+            <div class="top-social">
+                <a href="#" class="top-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="top-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon-box">S</div>
+                <div class="logo-text-group">
+                    <span class="logo-text">Sakthi Shanmugam</span>
+                    <span class="logo-sub">Chartered Engineer</span>
+                </div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-cta"><a href="contact.html" class="btn btn-accent">Contact Us</a></li>
+                <li>
+                    <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Drawer Backdrop for Mobile Drawer Menu -->
+    <div class="drawer-backdrop"></div>
+
+    <!-- Mobile Drawer Menu Navigation -->
+    <div class="mobile-nav-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <div class="logo-icon-box">S</div>
+                <span class="logo-text">Sakthi</span>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+            <li><a href="gallery.html" class="mobile-nav-link active">Gallery</a></li>
+            <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        </ul>
+        <div class="drawer-cta">
+            <a href="contact.html" class="btn btn-accent" style="width: 100%;">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Inner Page Header Banner -->
+    <div class="breadcumb-area" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://balamurugan.in/new/wp-content/uploads/2026/04/Banner.png'); padding: 80px 0; background-size: cover; background-position: center; text-align: center; color: var(--color-bg-white);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-family: var(--font-heading); margin-bottom: 8px; color: var(--color-accent);">Work Gallery</h2>
+            <div class="breadcumb-inner" style="font-size: 0.95rem; font-weight: 600; color: rgba(255, 255, 255, 0.8);">
+                <a href="index.html" style="color: var(--color-accent-light);">Home</a>
+                <i class="fa-solid fa-angle-right" style="margin: 0 8px; font-size: 0.75rem;"></i>
+                <span>Gallery</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Grid Filter Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Visual Portfolio</span>
+                <h2 class="section-title">Field Inspection Gallery</h2>
+                <p class="section-desc">Practical view of engineering appraisals, customs inspections, and valuation studies conducted on machinery components.</p>
+            </div>
+
+            <!-- Categories Filter Menu -->
+            <div class="gallery-filter-menu reveal reveal-delay-1">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="inspections">Inspections</button>
+                <button class="filter-btn" data-filter="valuations">Valuations</button>
+                <button class="filter-btn" data-filter="certifications">Certifications</button>
+            </div>
+
+            <!-- Gallery Items Grid -->
+            <div class="gallery-grid">
+                
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item reveal" data-category="valuations">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/1.jpeg" alt="Machinery Valuation Inspection">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Imported Lathe Valuation</h4>
+                        <span class="gallery-category">Valuations</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item reveal reveal-delay-1" data-category="inspections">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/2-scaled.jpg" alt="Mill Machine Inspection">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Industrial Milling Audit</h4>
+                        <span class="gallery-category">Inspections</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item reveal reveal-delay-2" data-category="inspections">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/3-scaled.jpg" alt="Hydraulic Press Verification">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Hydraulic System Safety</h4>
+                        <span class="gallery-category">Inspections</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item reveal reveal-delay-3" data-category="certifications">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/4-scaled.jpg" alt="CNC Center Check">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">EPCG Scheme Verification</h4>
+                        <span class="gallery-category">Certifications</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item reveal" data-category="valuations">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/5-scaled.jpg" alt="Boiler Inspection">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Steam Boiler Valuation</h4>
+                        <span class="gallery-category">Valuations</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item reveal reveal-delay-1" data-category="inspections">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/6-scaled.jpg" alt="Heavy Gear Box Check">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Gear Box Damage Survey</h4>
+                        <span class="gallery-category">Inspections</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item reveal reveal-delay-2" data-category="inspections">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/7-scaled.jpg" alt="Second hand tools survey">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Imported Tooling Check</h4>
+                        <span class="gallery-category">Inspections</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item reveal reveal-delay-3" data-category="valuations">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/8-scaled.jpg" alt="Industrial Pump Inspection">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">High Pressure Pumps</h4>
+                        <span class="gallery-category">Valuations</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item reveal" data-category="certifications">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/9-scaled.jpg" alt="Textile Machinery Certification">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Spinning Frame Check</h4>
+                        <span class="gallery-category">Certifications</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="gallery-item reveal reveal-delay-1" data-category="inspections">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/10-scaled.jpg" alt="Structural Steel Load Check">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Structural Safety Audit</h4>
+                        <span class="gallery-category">Inspections</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="gallery-item reveal reveal-delay-2" data-category="inspections">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/11-scaled.jpg" alt="CFS Auction valuation survey">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">CFS Uncleared Cargo</h4>
+                        <span class="gallery-category">Inspections</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="gallery-item reveal reveal-delay-3" data-category="valuations">
+                    <img src="https://balamurugan.in/new/wp-content/uploads/2026/04/12-scaled.jpg" alt="Injection Molding Machine">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Molding Machine Valuation</h4>
+                        <span class="gallery-category">Valuations</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Lightbox Modal -->
+    <div class="lightbox-modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+            <img src="" alt="Lightbox Zoomed View" class="lightbox-image">
+            <div class="lightbox-caption">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Sakthi <span>Shanmugam</span></h3>
+                    <p>Professional Chartered Engineer with a specialized mechanical background. Empanelled to supply legal valuations, inspections, and EPCG certificates to import/export units.</p>
+                    <div class="top-social">
+                        <a href="#" class="top-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="top-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.15rem; color: var(--color-bg-white); margin-bottom: 24px;">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li class="footer-link-item"><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Me</a></li>
+                        <li class="footer-link-item"><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+                        <li class="footer-link-item"><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+                        <li class="footer-link-item"><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.15rem; color: var(--color-bg-white); margin-bottom: 24px;">Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="footer-contact-details">
+                            <h5>Office Address</h5>
+                            <p>Chennai, Tamilnadu, India</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="footer-contact-details">
+                            <h5>Call Support</h5>
+                            <p>+91 9442932849</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="footer-contact-details">
+                            <h5>Email Address</h5>
+                            <p>sakthiceng@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sakthi Shanmugam – Chartered Engineer. All Rights Reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
