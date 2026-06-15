@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Preload Main Profile Image to improve page load speed -->
+    <link rel="preload" as="image" href="about-profile.png">
+    
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -130,7 +133,7 @@
                 <div class="about-image-wrapper reveal">
                     <div class="about-image-bg-glow"></div>
                     <div class="about-intro-image-frame">
-                        <img src="about-profile.png" alt="Sakthi Shanmugam profile picture">
+                    <img src="about-profile.png" alt="Sakthi Shanmugam profile picture" fetchpriority="high" decoding="sync">
                     </div>
                 </div>
                 <div class="about-intro-content reveal reveal-delay-2">
