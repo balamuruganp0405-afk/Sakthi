@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const itemCategory = item.getAttribute('data-category');
                     
                     if (filterValue === 'all' || itemCategory === filterValue) {
-                        item.style.display = 'block';
+                        item.style.display = 'inline-block';
                         // Add fade-in animation
                         item.style.opacity = '0';
                         setTimeout(() => {

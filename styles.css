@@ -91,7 +91,7 @@ body {
 }
 
 /* Theme Smooth Transitions */
-section, .navbar, .feature-card, .service-card, .testimonial-card, .contact-info-card, .contact-form-panel, .timeline-content, .widget, .skill-tag, .filter-btn, .about-intro-image-frame, .hero-image-frame {
+section, .navbar, .feature-card, .service-card, .testimonial-card, .contact-info-card, .contact-form-panel, .timeline-content, .widget, .skill-tag, .filter-btn, .about-image-wrapper, .about-intro-image-frame, .hero-image-frame {
     transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
 }
 
@@ -745,6 +745,28 @@ img {
     box-shadow: var(--shadow-xl);
     border: 2px solid var(--color-border);
     transition: var(--transition-slow);
+    overflow: hidden; /* Clips the bottom fade gradient to the rounded corners */
+    animation: electricGlowHero 8s infinite alternate ease-in-out;
+}
+
+/* Shimmer sweep effect on the profile image */
+.hero-image-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    z-index: 4;
+    animation: lightSweep 6s infinite ease-in-out;
+    pointer-events: none;
 }
 
 .hero-image-frame:hover {
@@ -752,11 +774,35 @@ img {
     border-color: var(--color-accent);
 }
 
+/* Gradient fade overlay to cover the cut bottom edge of the profile image */
+.hero-image-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 100px; /* Fade height */
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.95) 100%);
+    pointer-events: none;
+    z-index: 3;
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+}
+
+/* Theme-specific gradient colors for seamless blending */
+[data-theme="light"] .hero-image-frame::after {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+[data-theme="dark"] .hero-image-frame::after {
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.95) 100%);
+}
+
 .hero-image-frame img {
     border-radius: var(--radius-md);
     max-width: 440px;
     width: 100%;
     object-fit: cover;
+    object-position: top center; /* Crop from the bottom to keep head and torso in view */
     aspect-ratio: 1;
 }
 
@@ -906,18 +952,111 @@ img {
     align-items: center;
 }
 
+/* Interactive About Image Wrapper & Glowing Backlight */
+.about-image-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.about-image-bg-glow {
+    position: absolute;
+    width: 104%;
+    height: 104%;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    filter: blur(20px);
+    opacity: 0.2;
+    z-index: 1;
+    animation: wave 10s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+    transition: var(--transition-slow);
+}
+
+[data-theme="dark"] .about-image-bg-glow {
+    opacity: 0.32;
+    filter: blur(25px);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light), var(--color-primary-light));
+}
+
+.about-image-wrapper:hover .about-image-bg-glow {
+    opacity: 0.48;
+    filter: blur(30px);
+    transform: scale(1.06) rotate(8deg);
+}
+
 .about-intro-image-frame {
+    position: relative;
+    z-index: 2;
     background-color: var(--color-bg-white);
     padding: 12px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
+    overflow: hidden; /* Clips the bottom fade gradient to the rounded corners */
+    animation: electricGlowAbout 6s infinite alternate ease-in-out;
+    transition: var(--transition-slow);
+    width: 100%;
+}
+
+.about-image-wrapper:hover .about-intro-image-frame {
+    transform: translateY(-8px) rotate(1deg); /* Subtle tilt like hero image */
+    border-color: var(--color-accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 35px rgba(250, 204, 21, 0.5);
+}
+
+/* Shimmer sweep effect on the about image */
+.about-intro-image-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    z-index: 4;
+    animation: lightSweep 6s infinite ease-in-out;
+    animation-delay: 3s; /* Staggered shimmer from hero image */
+    pointer-events: none;
+}
+
+/* Gradient fade overlay to cover the cut bottom edge of the about profile image */
+.about-intro-image-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 100px; /* Fade height */
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.95) 100%);
+    pointer-events: none;
+    z-index: 3;
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+}
+
+/* Theme-specific gradient colors for seamless blending */
+[data-theme="light"] .about-intro-image-frame::after {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+[data-theme="dark"] .about-intro-image-frame::after {
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.95) 100%);
 }
 
 .about-intro-image-frame img {
     border-radius: var(--radius-md);
     width: 100%;
     object-fit: cover;
+    object-position: top center; /* Crop from the bottom to keep head and torso in view */
     aspect-ratio: 0.9;
 }
 
@@ -1338,7 +1477,8 @@ img {
 
 .blog-meta {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 12px 24px;
     font-size: 0.85rem;
     color: var(--color-text-light);
     margin-bottom: 16px;
@@ -1350,6 +1490,7 @@ img {
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 .blog-meta-item i {
@@ -1660,58 +1801,95 @@ img {
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    column-count: 3;
+    column-gap: 20px;
 }
 
 .gallery-item {
     position: relative;
-    border-radius: var(--radius-md);
+    border-radius: 16px;
     overflow: hidden;
-    height: 250px;
-    box-shadow: var(--shadow-sm);
+    height: auto;
+    background-color: var(--color-bg-alt);
     border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
     cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Shimmer gloss sweep on hover for gallery items */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    z-index: 4;
+    pointer-events: none;
+}
+
+.gallery-item:hover::before {
+    animation: gallerySweep 0.8s ease-out forwards;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light);
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(10,25,47,0.9) 0%, rgba(30,58,138,0.2) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    opacity: 0;
-    transition: var(--transition-normal);
+    height: auto;
+    display: block;
+    object-fit: contain; /* ensures images show fully in native aspect ratios */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.08);
+    transform: scale(1.03); /* Subtle zoom keeps watermarks fully inside view */
+}
+
+/* Elegant bottom fade overlay, showing title and category only on hover */
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.6) 60%, rgba(10, 25, 47, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 20px 20px 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-title {
     color: #ffffff;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 600;
     margin-bottom: 4px;
-    transform: translateY(10px);
-    transition: var(--transition-normal);
+    font-family: var(--font-heading);
 }
 
 .gallery-category {
@@ -1719,14 +1897,7 @@ img {
     font-size: 0.75rem;
     text-transform: uppercase;
     font-weight: 700;
-    transform: translateY(10px);
-    transition: var(--transition-normal);
-    transition-delay: 0.05s;
-}
-
-.gallery-item:hover .gallery-title,
-.gallery-item:hover .gallery-category {
-    transform: translateY(0);
+    letter-spacing: 0.5px;
 }
 
 /* Lightbox Modal */
@@ -2104,6 +2275,16 @@ textarea.form-input {
     .timeline-right {
         left: 0%;
     }
+    
+    /* Responsive Gallery Grid for Tablet */
+    .gallery-grid {
+        column-count: 2;
+        column-gap: 16px;
+    }
+    
+    .gallery-item {
+        margin-bottom: 16px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2183,7 +2364,12 @@ textarea.form-input {
     }
     
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        column-count: 2;
+        column-gap: 16px;
+    }
+    
+    .gallery-item {
+        margin-bottom: 16px;
     }
     
     .form-row {
@@ -2197,11 +2383,61 @@ textarea.form-input {
     .hero-title {
         font-size: 2.25rem;
     }
+
+    /* Responsive Blog Card & Layout Overrides */
+    .blog-large-body {
+        padding: 24px 20px;
+    }
+    
+    .blog-large-title {
+        font-size: 1.45rem;
+    }
+    
+    .blog-meta {
+        gap: 10px 16px;
+    }
+    
+    .blog-posts-list {
+        gap: 30px;
+    }
+    
+    .blog-single-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Center and align hero and about images on mobile/tablet viewports */
+    .hero-image-wrapper {
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .hero-image-frame {
+        max-width: 320px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* Hide the floating badges on tablets and mobile screens to prevent overlap layout breakage */
+    .hero-badge {
+        display: none !important;
+    }
+    
+    /* Center and size about profile picture on mobile/tablet */
+    .about-image-wrapper {
+        max-width: 320px;
+        width: 90%;
+        margin: 0 auto 30px auto;
+    }
 }
 
 @media (max-width: 480px) {
     .gallery-grid {
-        grid-template-columns: 1fr;
+        column-count: 1;
+        column-gap: 0;
+    }
+    
+    .gallery-item {
+        margin-bottom: 16px;
     }
     
     .hero-badge {
@@ -2335,6 +2571,7 @@ textarea.form-input {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
 }
 
 .widget-bio-name {
@@ -2888,4 +3125,58 @@ textarea.form-input {
 
 .faq-item.active .faq-answer {
     padding: 0 24px;
+}
+
+/* ==========================================================================
+   New Glow & Light Sweep Animations (Lightning Effects)
+   ========================================================================== */
+@keyframes lightSweep {
+    0% {
+        left: -150%;
+    }
+    50% {
+        left: 150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+@keyframes gallerySweep {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+@keyframes electricGlowHero {
+    0% {
+        border-color: var(--color-border);
+        box-shadow: var(--shadow-xl);
+    }
+    50% {
+        border-color: var(--color-primary-light);
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.45), var(--shadow-xl);
+    }
+    100% {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 25px rgba(250, 204, 21, 0.4), var(--shadow-xl);
+    }
+}
+
+@keyframes electricGlowAbout {
+    0% {
+        border-color: var(--color-border);
+        box-shadow: var(--shadow-lg);
+    }
+    50% {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 20px rgba(250, 204, 21, 0.35), var(--shadow-lg);
+    }
+    100% {
+        border-color: var(--color-primary-light);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), var(--shadow-lg);
+    }
 }
